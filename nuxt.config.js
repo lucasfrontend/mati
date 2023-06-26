@@ -1,5 +1,5 @@
 import colors from 'vuetify/es5/util/colors';
-import process from 'process';
+//import process from 'process';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 const environment = process.env.NODE_ENV || 'development';
 const config = require(`./config/${environment}.js`)
@@ -58,7 +58,7 @@ export default {
     {
       path: '/api',
       handler: createProxyMiddleware('/api', {
-        target: 'https://coterranea.nocrm.io',
+        target: process.env.BASE_URL,
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/api/v2',
