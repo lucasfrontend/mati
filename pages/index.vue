@@ -148,9 +148,9 @@ export default {
     getLeadsStandby() {
       const status = 'standby';
       return new Promise((resolve, reject) => {
-        axios.get(`/api/leads?status=${status}&limit=${this.limit}&offset=${this.offset}`, {
+        axios.get(`${process.env.BASE_URL}/api/leads?status=${status}&limit=${this.limit}&offset=${this.offset}`, {
           headers: {
-            'X-API-KEY': '021c22690d44a4c08868dfaaf514305c1b0742f9637603a2'
+            'X-API-KEY': process.env.API_KEY
           }
         })
           .then(response => {

@@ -43,7 +43,7 @@ export default {
   ],
   env: {
     apiURL: config.apiURL,
-    apiKey: config.apiKey,
+    //apiKey: config.apiKey,
   },
   /*
   ** Nuxt.js modules
