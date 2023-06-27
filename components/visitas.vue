@@ -1,6 +1,6 @@
 <template>
     <div>
-    <h1>visitas</h1>
+    <h1>visitas: {{  totalLeadsStandby }}</h1>
     <ul>
       <li v-for="lead in leads" :key="lead.id">
         {{ lead.title }}
@@ -16,6 +16,7 @@ export default {
 
   data() {
     return {
+      leads: this.$store.state.leads.leads
     };
   },
   components: {
@@ -23,7 +24,9 @@ export default {
   methods: {
   },
   computed: {
-    ...mapState('leads', ['leads']),
+    totalLeadsStandby() {
+      return this.$store.state.leads.leads.length;
+    }
   },
 };
 </script>

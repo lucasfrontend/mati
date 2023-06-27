@@ -1,8 +1,7 @@
 <template>
   <v-layout>
     <v-flex>
-
-      <h2 v-if="totalLeadsStandby" class="pl-3">Total Leads Standby: {{ totalLeadsStandby }}</h2>
+      <h2 class="pl-3">Total Leads Standby: {{ standByleads.length }}</h2>
       <h2 v-if="leadsEnStandbyMasDe14Dias">Leads + 14 dias: {{ leadsEnStandbyMasDe14Dias }} </h2>
       <h3 v-if="users">total users: {{ users.length }} </h3>
       <!--
@@ -16,11 +15,6 @@
         <v-row>
           <v-col v-for="lead in standByleads" :key="lead.id" xs="12" sm="6" md="4" lg="3">
             <h4>{{ lead.title }}</h4>
-            <p>{{  }}</p>
-            <p>{{  }}</p>
-            <p>{{  }}</p>
-            <p>{{  }}</p>
-            <p>{{  }}</p>
             <lead-card :lead="lead" />
           </v-col>
         </v-row>
@@ -179,12 +173,12 @@ export default {
       .finally(() => {
         // Código a ejecutar sin importar si la promesa se resuelve o se rechaza
         console.log('Tarea de obtención de leads finalizada.');
-        this.filterLeadsByStep()
-        this.getLeadById('24680426')
-        this.getLeadByIdWithComment('24680426')
-        this.calculateDays()
-        this.orderBycreated()
-        this.orderByCreatedAt()
+        //this.filterLeadsByStep()
+        //this.getLeadById('24680426')
+        //this.getLeadByIdWithComment('24680426')
+        //this.calculateDays()
+        //this.orderBycreated()
+        //this.orderByCreatedAt()
       });
     },
     getLeadById(leadId) {
