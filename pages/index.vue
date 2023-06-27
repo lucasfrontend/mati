@@ -148,7 +148,8 @@ export default {
     getLeadsStandby() {
       const status = 'standby';
       return new Promise((resolve, reject) => {
-        axios.get(`${process.env.BASE_URL}/api/leads?status=${status}&limit=${this.limit}&offset=${this.offset}`, {
+        axios.get(`/api/leads?status=${status}&limit=${this.limit}&offset=${this.offset}`, {
+          baseURL: 'https://coterranea.nocrm.io', // Establece la URL base del servidor de destino
           headers: {
             'X-API-KEY': process.env.API_KEY
           }
